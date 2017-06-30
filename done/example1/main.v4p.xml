@@ -1,0 +1,107 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+  <PATCH>
+  <BOUNDS type="Window" width="7500" height="7500">
+  </BOUNDS>
+  <NODE id="1" nodename="GetElement (HTML)" systemname="GetElement (HTML)" componentmode="Hidden">
+  <BOUNDS type="Node" left="1515" top="1620" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Selector" visible="1">
+  </PIN>
+  <PIN pinname="Parent" visible="1">
+  </PIN>
+  <PIN pinname="Refresh" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="2" nodename="SetText (HTML)" systemname="SetText (HTML)" componentmode="Hidden">
+  <BOUNDS type="Node" left="915" top="2670" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Element" visible="1">
+  </PIN>
+  <PIN pinname="Text" visible="1" values="|WORKS!|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="3" nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox">
+  <BOUNDS type="Box" left="1515" top="975" width="0" height="0">
+  </BOUNDS>
+  <PIN pinname="SliceOffset" visible="1">
+  </PIN>
+  <PIN pinname="Input String" visible="1" values="|#state|">
+  </PIN>
+  <PIN pinname="Rows" visible="0" values="|1|">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="4" nodename="Font (HTML)" systemname="Font (HTML)" componentmode="Hidden">
+  <BOUNDS type="Node" left="4185" top="2085" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Style In" visible="1">
+  </PIN>
+  <PIN pinname="color" visible="1">
+  </PIN>
+  <PIN pinname="font-family" visible="1">
+  </PIN>
+  <PIN pinname="font-weight" visible="1">
+  </PIN>
+  <PIN pinname="text-decoration" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="5" nodename="ApplyStyle (HTML)" systemname="ApplyStyle (HTML)" componentmode="Hidden">
+  <BOUNDS type="Node" left="2775" top="2685" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Style" visible="1">
+  </PIN>
+  <PIN pinname="Element" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="7" nodename="HSV (Color Join)" systemname="HSV (Color Join)" componentmode="Hidden">
+  <BOUNDS type="Node" left="4635" top="1455" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Hue" visible="1">
+  </PIN>
+  <PIN pinname="Saturation" visible="1" values="|1|">
+  </PIN>
+  <PIN pinname="Value" visible="1" values="|1|">
+  </PIN>
+  <PIN pinname="Alpha" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <NODE id="8" nodename="LFO (Animation)" systemname="LFO (Animation)" componentmode="Hidden">
+  <BOUNDS type="Node" left="4620" top="930" width="100" height="100">
+  </BOUNDS>
+  <PIN pinname="Period" visible="1">
+  </PIN>
+  <PIN pinname="Pause" visible="1">
+  </PIN>
+  <PIN pinname="Reverse" visible="1">
+  </PIN>
+  <PIN pinname="Reset" visible="1">
+  </PIN>
+  <PIN pinname="Phase" visible="1">
+  </PIN>
+  <PIN pinname="Descriptive Name" visible="0" values="||">
+  </PIN>
+  </NODE>
+  <LINK srcnodeid="1" srcpinname="Layers Out" dstnodeid="2" dstpinname="Element">
+  </LINK>
+  <LINK srcnodeid="3" srcpinname="Output String" dstnodeid="1" dstpinname="Selector">
+  </LINK>
+  <LINK srcnodeid="4" srcpinname="Style Out" dstnodeid="5" dstpinname="Style">
+  </LINK>
+  <LINK srcnodeid="1" srcpinname="Layers Out" dstnodeid="5" dstpinname="Element">
+  </LINK>
+  <LINK srcnodeid="7" srcpinname="Output" dstnodeid="4" dstpinname="color">
+  </LINK>
+  <LINK srcnodeid="8" srcpinname="Output" dstnodeid="7" dstpinname="Hue">
+  </LINK>
+  </PATCH>
